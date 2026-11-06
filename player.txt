@@ -1,0 +1,31 @@
+1. In one sentence, why put name, jersey, and points in one struct instead of three separate variables?
+    A struct keeps a player's name, jersey number, and points together as one logical unit, making the data easier to manage and pass around in functions.
+
+2. What does p->jersey mean, and how is it different from p.jersey?
+    p->jersey accesses the jersey field through a pointer to a struct, while p.jersey accesses the field directly from a struct variable.
+
+3. Why must init_player leave room for '\0' when copying into name[32]?
+    init_player must leave room for '\0' so the copied name is a valid C string and functions that read it know where the string ends.
+
+4. Why does add_points take struct Player * instead of struct Player by value?
+    add_points takes a struct Player * so it can modify the original player's points instead of changing only a temporary copy.
+
+5. If you have struct Player roster[3], how do you pass the second player to print_player?
+    If roster is an array of players, you pass the second player with print_player(&roster[1]); because array indexing starts at 0.
+
+6. In one or two sentences: what is a coding agent, and how is it different from plain autocomplete that only suggests the next few tokens?
+    A coding agent can plan, edit files, run tools, and perform multi-step tasks, while autocomplete only predicts and suggests the next few tokens of code.
+
+7. The lecture suggests thinking of yourself as a manager of an intern. Give one concrete example of guidance or correction you would give an agent working on init_player.
+    I might tell the agent to ensure init_player checks for a NULL name pointer and always null-terminates name[32] to prevent crashes and buffer issues.
+
+8. Name two risks from What to watch out for (mistakes, overreliance, security bugs, rabbit holes, …). For each, write one sentence on what you will do differently.
+    One risk is that agents can make mistakes, so I will compile, test, and review their changes before accepting them. Another risk is overreliance, so I will make sure I understand the code myself instead of blindly trusting the agent's output.
+
+9. In one sentence: why do many agent tools ask you to confirm a shell or file-edit tool call before it runs?
+    Many agent tools require confirmation before shell commands or file edits so users can prevent unintended, unsafe, or destructive changes.
+
+10. After an agent edits your C file, what is one check you should run before you trust the change (compile, run the demo, re-read the diff, …)?
+    Before trusting an agent's edit, I should compile and run the program to verify that the change works correctly and does not introduce errors.
+
+
